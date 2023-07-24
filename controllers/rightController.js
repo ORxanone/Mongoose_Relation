@@ -12,8 +12,12 @@ module.exports = {
     return res.send(rightData);
   },
   staffByRight: async (req, res) => {
-      const rightData = await Right.find({ _id: req.body.right_id }).populate("staff_id");
-      
+    const rightData = await Right.find({ _id: req.body.right_id })
+      .populate({
+        path: 'staff_id',
+        match: { $regex: '.*GMAIL*.', $options: "i"}
+      });
+
     console.log(rightData);
 
     res.send(rightData);

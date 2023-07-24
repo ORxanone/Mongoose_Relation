@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const rightSchema = new mongoose.Schema(
   {
-    staff_id: {
+    staff_id: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Staff",
-    },
+    }],
     right: {
       type: String,
     },

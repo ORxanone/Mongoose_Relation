@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const connect = require("./db");
 
-// const router = require("./routers/router");
 
 const app = express();
 app.use(express.json());
